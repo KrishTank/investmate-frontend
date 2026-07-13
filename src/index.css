@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-vault text-mist font-body;
+  }
+}
+
+@layer components {
+  /* Frosted "vault glass" card — the base surface for every panel */
+  .glass-card {
+    @apply relative rounded-2xl border border-mist/10 bg-mist/[0.04] backdrop-blur-xl shadow-card-dark;
+  }
+
+  /* Gold, shimmering call-to-action */
+  .btn-shine {
+    background: linear-gradient(120deg, #9c7326 0%, #c99a3c 35%, #f4d785 50%, #c99a3c 65%, #9c7326 100%);
+    background-size: 220% 100%;
+  }
+  .btn-shine:hover:not(:disabled) {
+    animation: sheen 1.6s linear infinite;
+  }
+}
+
+/* Custom slider styling — thin ledger-rail track with a glowing gold thumb */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  outline: none;
+  background: linear-gradient(
+    to right,
+    #e4c077 0%,
+    #e4c077 var(--range-progress, 50%),
+    rgba(234, 241, 236, 0.12) var(--range-progress, 50%),
+    rgba(234, 241, 236, 0.12) 100%
+  );
+  transition: background 0.05s linear;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: #f4d785;
+  border: 3px solid #0a1b14;
+  box-shadow: 0 0 0 1px rgba(228, 192, 119, 0.6), 0 2px 10px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  margin-top: -8px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover,
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 1px rgba(228, 192, 119, 0.8), 0 0 18px rgba(228, 192, 119, 0.55);
+}
+
+input[type="range"]::-moz-range-track {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(234, 241, 236, 0.12);
+}
+
+input[type="range"]::-moz-range-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: #e4c077;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #0a1b14;
+  border-radius: 999px;
+  background: #f4d785;
+  box-shadow: 0 0 0 1px rgba(228, 192, 119, 0.6), 0 2px 10px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+}
+
+/* Slim custom scrollbar to match the vault theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(234, 241, 236, 0.14);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(228, 192, 119, 0.4);
+  background-clip: padding-box;
+}
+
+::selection {
+  background: #c99a3c;
+  color: #0a1b14;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
