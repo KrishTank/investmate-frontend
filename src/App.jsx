@@ -157,8 +157,7 @@ export default function App() {
                   }`}
                 />
               </span>
-              {chartStatus === "error" ? "backend offline" : "localhost:8000"}
-            </span>
+                 {chartStatus === "error" ? "backend offline" : "live"}            </span>
           </div>
         </header>
 
