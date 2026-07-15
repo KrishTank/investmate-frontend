@@ -7,8 +7,7 @@
 // Locally (npm run dev), Vite automatically reads a `.env` file in the
 // frontend project root if one exists. If VITE_API_URL isn't set anywhere,
 // this falls back to localhost:8000 so local dev keeps working unchanged.
-export const API_BASE = import.meta.env.VITE_API_URL || "https://typeinvestmatebackend-8c90x2ja.b4a.run";
-/**
+export const API_BASE = import.meta.env.VITE_API_URL || "https://investmate-backend-ap3v.onrender.com";/**
  * Calls POST /api/portfolio/simulate and returns the parsed PortfolioResult.
  * Throws an Error with a human-readable message on failure.
  */
