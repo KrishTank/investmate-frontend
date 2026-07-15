@@ -131,10 +131,10 @@ export default function App() {
               </div>
               <div>
                 <h1 className="font-display text-xl md:text-2xl leading-tight text-mist">
-                  Investmate
+                  InvestMate
                 </h1>
                 <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-mist-faint">
-                  Wealth Ledger &amp; Goal Simulator
+                  Where Savings Meet Strategy
                 </p>
               </div>
             </div>
@@ -236,7 +236,7 @@ export default function App() {
           </section>
 
           <footer className="text-center text-xs text-mist-faint font-mono pt-4 pb-8">
-            Investmate — figures are illustrative projections, not guarantees.
+            InvestMate — figures are illustrative projections, not guarantees.
           </footer>
         </main>
       </div>
